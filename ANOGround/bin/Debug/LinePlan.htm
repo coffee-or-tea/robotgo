@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+	#allmap {width: 100%; height:500px; overflow: hidden;}
+	#result {width:100%;font-size:12px;}
+	dl,dt,dd,ul,li{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	p{font-size:12px;}
+	dt{
+		font-size:14px;
+		font-family:"微软雅黑";
+		font-weight:bold;
+		border-bottom:1px dotted #000;
+		padding:5px 0 5px 5px;
+		margin:5px 0;
+	}
+	dd{
+		padding:5px 0 0 5px;
+	}
+	li{
+		line-height:28px;
+	}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=cqtEsUCQmKG3eByTXPGZfhYg"></script>
+    <script type="text/javascript" src="LuShu_min.js"></script>
+    <!--加载鼠标绘制工具-->
+	<script type="text/javascript" src="DrawingManager_min.js"></script>  
+    <link rel="stylesheet" href="DrawingManager_min.css" />  
+	<!--加载检索信息窗口-->
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.css" />
+
+
+
+
+	<title>鼠标绘制工具</title>
+   
+</head>
+<body>
+	<div id="allmap" style="overflow:hidden;zoom:1;position:relative;">	
+		<div id="map" style="height:100%;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;"></div>
+	</div>
+	<div id="result">
+		<input type="button" value="获取绘制的覆盖物个数" onclick="alert(overlays.length)"/>
+		<input type="button" value="清楚飞机航迹规划" onclick="clearAll()"/>
+                 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鼠标经度:
+        <input type="text" id="longitude" value="" />
+       鼠标纬度:
+        <input type="text" id="latitude" value="" />
+        <br />
+        起点经度:
+        <input type="text" id="setlongitude" value="" />
+        起点纬度:
+        <input type="text" id="setlatitude" value="" />
+        <br />
+        终点经度:
+        <input type="text" id="deslongitude" value="" />
+        终点纬度:
+        <input type="text" id="deslatitude" value="" />
+        
+        <input type="button" value="规划直线" onclick="theLocation()" />	
+        <input type="button" value="路书" onclick="thelushu()" />	
+        <input type="button" value="GPS转化" onclick="GPS_Baidu()" />	
+	</div>
+
+	<script type="text/javascript">
+	// 百度地图API功能
+    var map = new BMap.Map('map');
+    var poi = new BMap.Point(116.307852,40.057031);
+    map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+
+    // 添加带有定位的导航控件
+    var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    });
+    map.addControl(navigationControl);
+        // 添加定位控件
+    var geolocationControl = new BMap.GeolocationControl();
+    geolocationControl.addEventListener("locationSuccess", function (e) {
+        // 定位成功事件
+        var address = '';
+        address += e.addressComponent.province;
+        address += e.addressComponent.city;
+        address += e.addressComponent.district;
+        address += e.addressComponent.street;
+        address += e.addressComponent.streetNumber;
+        alert("当前定位地址为：" + address);
+    });
+
+    var overlays = [];
+	var overlaycomplete = function(e){
+        overlays.push(e.overlay);
+    };
+    var styleOptions = {
+        strokeColor:"red",    //边线颜色。
+        fillColor:"red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+        strokeWeight: 3,       //边线的宽度，以像素为单位。
+        strokeOpacity: 0.8,	   //边线透明度，取值范围0 - 1。
+        fillOpacity: 0.6,      //填充的透明度，取值范围0 - 1。
+        strokeStyle: 'solid' //边线的样式，solid或dashed。
+    }
+        //路书功能
+    var lushu;
+    var arrPois; //= [new BMap.Point(116.404, 39.915), new BMap.Point(117, 40)];//路书所需要的点
+    //实例化鼠标绘制工具
+    var drawingManager = new BMapLib.DrawingManager(map, {
+        isOpen: false, //是否开启绘制模式
+        enableDrawingTool: true, //是否显示工具栏
+        drawingToolOptions: {
+            anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+            offset: new BMap.Size(5, 5) //偏离值
+        },
+        circleOptions: styleOptions, //圆的样式
+        polylineOptions: styleOptions, //线的样式
+        polygonOptions: styleOptions, //多边形的样式
+        rectangleOptions: styleOptions //矩形的样式
+    });  
+	 //添加鼠标绘制工具监听事件，用于获取绘制结果
+    drawingManager.addEventListener('overlaycomplete', overlaycomplete);
+    map.addEventListener("click", function (e) {
+       
+    });
+    function clearAll() {
+		for(var i = 0; i < overlays.length; i++){
+            map.removeOverlay(overlays[i]);
+		}
+		map.clearOverlays();
+        overlays.length = 0   
+    }
+
+    function theLocation() {
+        if (document.getElementById("setlongitude").value != "" && document.getElementById("setlatitude").value != "") {
+          //  map.clearOverlays();
+            var new_point_1 = new BMap.Point(document.getElementById("setlongitude").value, document.getElementById("setlatitude").value);
+            var marker_1 = new BMap.Marker(new_point_1);  // 创建标注
+            var new_point_2 = new BMap.Point(document.getElementById("deslongitude").value, document.getElementById("deslatitude").value);
+            var marker_2 = new BMap.Marker(new_point_2);  // 创建标注
+            arrPois = [new_point_1, new_point_2];
+            //alert(arrPois[1].lat);
+            var polyline = new BMap.Polyline([new_point_1, new_point_2], { strokeColor: "blue", strokeWeight: 6, strokeOpacity: 0.5 });
+            map.addOverlay(marker_1);              // 将标注添加到地图中
+            map.addOverlay(marker_2);              // 将标注添加到地图中
+            map.addOverlay(polyline);              // 将标注添加到地图中
+            map.setViewport([new_point_1,new_point_2]);
+            //map.panTo(new_point_1);
+            //alert('救援中心到灾难现场距离：' + (map.getDistance(new_point_1, new_point_2)).toFixed(2) + ' 米。');
+        }
+    }
+
+    function thelushu() {
+       // map.clearOverlays();
+        lushu = new BMapLib.LuShu(map, arrPois, {
+            defaultContent: "",//"从天安门到百度大厦"
+            autoView: true,//是否开启自动视野调整，如果开启那么路书在运动过程中会根据视野自动调整
+            icon: new BMap.Icon('plane.gif', new BMap.Size(30, 32), { anchor: new BMap.Size(15, 16)}),
+            speed: 5000,
+            enableRotation: true,
+            landmarkPois: arrPois//////////###############################################在winform里面调用必须要有，没有的话浏览器能正常，但winform不行~
+        });
+        lushu.start();
+    }
+ 
+    function GPS_Baidu() {
+       
+        ggPoint = new BMap.Point(longitude.value, latitude.value);
+        var myIcon = new BMap.Icon('plane.gif', new BMap.Size(30, 32), { anchor: new BMap.Size(15, 16) });
+        var markergg = new BMap.Marker(ggPoint);
+        map.addOverlay(markergg); //添加GPS marker
+        var labelgg = new BMap.Label("未转换的GPS坐标（错误）", { offset: new BMap.Size(20, -10) });
+        markergg.setLabel(labelgg); //添加GPS label
+
+        //坐标转换完之后的回调函数
+        translateCallback = function (data) {
+            if (data.status === 0) {
+               
+                var marker = new BMap.Marker(data.points[0], { icon: myIcon });
+                map.addOverlay(marker);
+                var label = new BMap.Label("转换后的百度坐标（正确）", { offset: new BMap.Size(20, -10) });
+                marker.setLabel(label); //添加百度label
+                map.setCenter(data.points[0]);
+            }
+        }
+
+        setTimeout(function () {
+            var convertor = new BMap.Convertor();
+            var pointArr = [];
+            pointArr.push(ggPoint);
+            convertor.translate(pointArr, 1, 5, translateCallback)
+        }, 1000);
+
+    }
+
+    function Display(a, b)
+    {
+        longitude.value = a;
+        latitude.value = b;
+        alert(a + b);
+        GPS_Baidu();
+    }
+</script>
+</body>
+</html>

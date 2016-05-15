@@ -1,0 +1,206 @@
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.exe.config
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.exe
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.pdb
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.exe
+E:\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.pdb
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.exe.config
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.exe
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.pdb
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.exe
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\ANOGround.pdb
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.Form1.resources
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+C:\LG\EDA\Code\地面站\C#\ANOGround\ANOGround\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\ANOGround.exe.config
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Common.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Plot.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.Form1.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.exe.licenses
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\DrawingManager_min.css
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\DrawingManager_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\LinePlan.htm
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\LuShu_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\bin\Debug\plane.gif
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\ANOGround\ANOGround\obj\Debug\ANOGround.Welcome.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\ANOGround.exe.config
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.css
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\LinePlan.htm
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\LuShu_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\plane.gif
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Common.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Plot.dll
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.Form1.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.Welcome.resources
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\C#上位机编写\Mission Plane\最后版上位机\ANOGround\obj\Debug\ANOGround.exe.licenses
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\ANOGround.exe.config
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.css
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\LinePlan.htm
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\LuShu_min.js
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\plane.gif
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\ANOGround.exe
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\ANOGround.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Common.dll
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\Iocomp.Instrumentation.WF40.Plot.dll
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.Form1.resources
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.Welcome.resources
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\C#上位机编写\上位机编写\最后版上位机\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\C#\最后版上位机\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\C#\最后版上位机\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\4.11月改\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\4.11月改\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\4.14月改\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\4.14月改\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\4.18月改 - 加变量触发\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\5.3号修改\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\5.3号修改\ANOGround\obj\Debug\ANOGround.exe.licenses
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\ANOGround.exe.config
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.exe
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.pdb
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\DrawingManager_min.css
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\DrawingManager_min.js
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\LinePlan.htm
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\LuShu_min.js
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\plane.gif
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\ANOGround.exe
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\ANOGround.pdb
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.dll
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\GMap.NET.Core.dll
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\GMap.NET.WindowsForms.dll
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\AvionicsInstrumentControlDemo.pdb
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\bin\Debug\GMap.NET.WindowsForms.pdb
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.csprojResolveAssemblyReference.cache
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.Form1.resources
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.Properties.Resources.resources
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.Welcome.resources
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.csproj.GenerateResource.Cache
+E:\毕业设计\5.5号在一个层加所有marker\ANOGround\obj\Debug\ANOGround.exe.licenses
