@@ -781,7 +781,7 @@ namespace ANOGround
                 else if (timei == 2)
                 {
                     getGPS(28);
-                    timei=0;
+                    timei++;
                 }
                 else if (timei == 3)
                 {
@@ -946,7 +946,7 @@ namespace ANOGround
                     EvilTransform.transform(wglat, wglng, out lat, out lng);
 
 
-                    if (nowlat3 != 0 && lat > 30 && lng > 100)
+                    if (nowlat4 != 0 && lat > 30 && lng > 100)
                     {
                         lastlat4 = nowlat4;
                         lastlng4 = nowlng4;
@@ -954,8 +954,8 @@ namespace ANOGround
                         nowlng4 = lng;
 
                         List<PointLatLng> points = new List<PointLatLng>();
-                        points.Add(new PointLatLng(lastlat3, lastlng3));
-                        points.Add(new PointLatLng(nowlat3, nowlng3));
+                        points.Add(new PointLatLng(lastlat4, lastlng4));
+                        points.Add(new PointLatLng(nowlat4, nowlng4));
                         GMapRoute r = new GMapRoute(points, "");
 
                         r.Stroke = new Pen(Color.Red, 2);
@@ -964,8 +964,8 @@ namespace ANOGround
                     }
                     else if (lat > 30 && lng > 100)
                     {
-                        nowlat3 = lat;
-                        nowlng3 = lng;
+                        nowlat4 = lat;
+                        nowlng4 = lng;
                     }
                 }
 
