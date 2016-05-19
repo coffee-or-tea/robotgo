@@ -17,7 +17,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using GMap.NET.CacheProviders;
-
+using System.Threading;
 
 namespace ANOGround
 {
@@ -290,12 +290,30 @@ namespace ANOGround
                                      if (I>0)
                                      {
                                          RobotId = data_buf[I - 1] / 16 * 10 +data_buf[I - 1] %16;
-
+                                         //     机器人接收数据
+                                         robot[RobotId].robotOverlay = GMapAllRoutes[RobotId];
+                                          robot[RobotId].getpoint(latitude, longitude);
+                                          markOnePoint(robot[RobotId].nowPoint.Lat, robot[RobotId].nowPoint.Lng, RobotId);
+                                          if (robot[RobotId].arrivedCheck == 0)
+                                          {
+                                              Bitmap bitmap1 = (Bitmap)imageList3.Images[RobotId];//bitmapi++
+                                              GMarkerGoogle marker = new GMarkerGoogle(robot[RobotId].nowPoint, bitmap1);
+                                              GMapAllMarkers[RobotId].Markers.Clear();
+                                              GMapAllMarkers[RobotId].Markers.Add(marker);
+                                          }
+                                          else if (robot[RobotId].arrivedCheck == 1)
+                                          {
+                                              Bitmap bitmap1 = (Bitmap)imageList2.Images[RobotId];//bitmapi++
+                                              GMarkerGoogle marker = new GMarkerGoogle(robot[RobotId].nowPoint, bitmap1);
+                                              GMapAllMarkers[RobotId].Markers.Clear();
+                                              GMapAllMarkers[RobotId].Markers.Add(marker);
+                                          }
                                      }
-
-
-
                                         break;
+                                    case 9:
+                                            RobotId=data_buf[I + 4];
+                                            robot[RobotId].arrivedCheck = data_buf[I + 5];
+                                            break;
                                     default:
                                         break;
                                 }
@@ -492,15 +510,32 @@ namespace ANOGround
         GMapOverlay routesOverlay28 = new GMapOverlay("");
         GMapOverlay routesOverlay30 = new GMapOverlay("");
         GMapOverlay routesOverlay32 = new GMapOverlay("");
+        //List<GMapOverlay> GMapAllMarkers = new List<GMapOverlay>();
+        //List<GMapOverlay> GMapAllRoutes = new List<GMapOverlay>();
+        //List<robot> robot=new List<robot>();
+        static robot[] robot = new robot[50];
+        GMapOverlay[] GMapAllMarkers = new GMapOverlay[50];
+        GMapOverlay[] GMapAllRoutes = new GMapOverlay[50];
+        robot robotex = new robot();
+        robot robotexe = new robot();
         private void MainMAp_Load(object sender, EventArgs e)
         {
-            
+           
             this.MainMap.Position = new PointLatLng(39.9607345203, 116.3210688729);
             MainMap.ShowCenter = false; //不显示中心十字点 
             this.MainMap.Manager.Mode = AccessMode.ServerAndCache;
             this.MainMap.MapProvider = GMapProviders.AMapSatelite;
-
-            
+            for (int i = 0; i < 50; i++)
+            {
+                //robot robot[i]=new robot();
+                //robot[i]=robotex;
+                robot[i] = new robot();
+                GMapAllMarkers[i]=new GMapOverlay();
+                GMapAllRoutes[i] = new GMapOverlay();
+                MainMap.Overlays.Add(GMapAllMarkers[i]);
+                MainMap.Overlays.Add(GMapAllRoutes[i]);
+                
+            }
             MainMap.Overlays.Add(markerOverlaysDis);
             MainMap.Overlays.Add(markerOverlays);
             MainMap.Overlays.Add(markerOverlays1);
@@ -609,24 +644,12 @@ namespace ANOGround
                  GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.arrow);
                  //marker.ToolTipText = "12";
                  markerOverlays0.Markers.Add(marker);
-                 serialPort1.Write( function1.GPSToCode(point,0x27), 0,  function1.GPSToCode(point,27).Length);  //向机器人发送要走的位置
-                 for (int i = 0; i < 10000000; i++)
+                 for (int i = 0; i < 35; i++)
                  {
-
+                     byte s=(byte)(i / 10 *16+ i % 10);
+                     serialPort1.Write(function1.GPSToCode(point, s), 0, function1.GPSToCode(point, s).Length);  //向机器人发送要走的位置
+                     Thread.Sleep(50);
                  }
-                 serialPort1.Write(function1.GPSToCode(point, 0x28), 0, function1.GPSToCode(point, 28).Length);  //向机器人发送要走的位置
-                 for (int i = 0; i < 10000000; i++)
-                 {
-
-                 }
-                 serialPort1.Write(function1.GPSToCode(point, 0x30), 0, function1.GPSToCode(point, 30).Length);  //向机器人发送要走的位置
-                 for (int i = 0; i < 100000000; i++)
-                 {
-
-                 }
-                 serialPort1.Write(function1.GPSToCode(point, 0x32), 0, function1.GPSToCode(point, 32).Length);  //向机器人发送要走的位置
-                
-                 
             }
 
 
@@ -634,7 +657,6 @@ namespace ANOGround
             {
                 
                 PointLatLng point = MainMap.FromLocalToLatLng(e.X, e.Y);
-                //markOnePoint(e.X, e.Y);
                 mouselat = point.Lat;
                 mouselng = point.Lng;
                
@@ -702,10 +724,13 @@ namespace ANOGround
         //标记一个点
         public void markOnePoint(double Lat, double Lng,int i)
         {
+
             PointLatLng markPoint = new PointLatLng(Lat, Lng);
             Bitmap bitmap1 = (Bitmap)imageList3.Images[i];//bitmapi++
             GMarkerGoogle marker = new GMarkerGoogle(markPoint,bitmap1);
-            markerOverlays.Markers.Add(marker);
+            GMapAllMarkers[i].Markers.Clear();
+            //markerOverlaysMM.Markers.Add(marker);
+            GMapAllMarkers[i].Markers.Add(marker);
         }
        
 
@@ -748,7 +773,7 @@ namespace ANOGround
 
         void getGPS(int id)                                                           //获取GPS函数
         {
-            string s = "AAD180" + id + "AAAF03005C55";     //发送指令获取GPS
+            string s = "AAD180" + id.ToString("D2") + "AAAF03005C55";     //发送指令获取GPS
             byte[] buffer = new byte[s.Length / 2];
             for (int i = 0; i < s.Length; i += 2)
                 buffer[i / 2] = (byte)Convert.ToByte(s.Substring(i, 2), 16);
@@ -764,255 +789,26 @@ namespace ANOGround
                // markerOverlaysMM.Markers.Clear();
                 markerOverlaysMM.Routes.Clear();
             }
-
-
             if (checkBoxGPS.Checked&&btn_com_open.Enabled==false)
             {
-                if (timei==0)
-                {
-                    getGPS(27);
+                    getGPS(timei);                                     //获取GPS指令
+                   
                     timei++;
-                }
-                else if (timei == 1)
-                {
-                    getGPS(30);
-                    timei++;
-                }
-                else if (timei == 2)
-                {
-                    getGPS(28);
-                    timei++;
-                }
-                else if (timei == 3)
-                {
-                    getGPS(32);
-                    timei = 0;
-                }
-                //getGPS(30);
+                    if (timei>50)
+                    {
+                        timei = 0;
+                    }    
             }
-
-             #region     机器人接收指令                           
-            if (RobotId == 27)
-            {
-
-                if (status == 65)
-                {
-                    double wglat, wglng;
-
-
-                    double.TryParse(System.Text.Encoding.Default.GetString(latitude), out wglat);
-                    double.TryParse(System.Text.Encoding.Default.GetString(longitude), out wglng);
-                    //double.TryParse(System.Text.Encoding.Default.GetString(Azimuth), out azi);
-
-
-                    wglat = (wglat - (int)wglat / 100 * 100) / 60 + (int)wglat / 100;
-                    wglng = (wglng - (int)wglng / 100 * 100) / 60 + (int)wglng / 100;
-                    EvilTransform.transform(wglat, wglng, out lat, out lng);
-
-
-
-                    ////数据存入txt
-
-                    Textsave += wglat.ToString("N13") + "  " + wglng.ToString("N12") + "\r\n";
-
-                    FileStream fs = new FileStream(path, FileMode.Create);
-                    StreamWriter sw = new StreamWriter(fs, Encoding.Unicode);
-                    sw.Write(Textsave);
-                    sw.Close();
-                    fs.Close();
-
-
-
-
-                    if (nowlat1 != 0 && lat > 30 && lng > 100)
-                    {
-                        lastlat1 = nowlat1;
-                        lastlng1 = nowlng1;
-                        nowlat1 = lat;
-                        nowlng1 = lng;
-
-                        List<PointLatLng> points = new List<PointLatLng>();
-                        points.Add(new PointLatLng(lastlat1, lastlng1));
-                        points.Add(new PointLatLng(nowlat1, nowlng1));
-                        GMapRoute r = new GMapRoute(points, "");
-                        r.Stroke = new Pen(Color.Red, 2);
-                        routesOverlay27.Routes.Add(r);
-
-                    }
-                    else if (lat > 30 && lng > 100)
-                    {
-                        nowlat1 = lat;
-                        nowlng1 = lng;
-                    }
-                }
-            }
-
-            else if (RobotId == 28)
-            {
-
-                if (status == 65)
-                {
-                    double wglat, wglng;
-
-
-                    double.TryParse(System.Text.Encoding.Default.GetString(latitude), out wglat);
-                    double.TryParse(System.Text.Encoding.Default.GetString(longitude), out wglng);
-                    //double.TryParse(System.Text.Encoding.Default.GetString(Azimuth), out azi);
-
-
-                    wglat = (wglat - (int)wglat / 100 * 100) / 60 + (int)wglat / 100;
-                    wglng = (wglng - (int)wglng / 100 * 100) / 60 + (int)wglng / 100;
-                    EvilTransform.transform(wglat, wglng, out lat, out lng);
-
-                    if (nowlat2 != 0 && lat > 30 && lng > 100)
-                    {
-                        lastlat2 = nowlat2;
-                        lastlng2 = nowlng2;
-                        nowlat2 = lat;
-                        nowlng2 = lng;
-
-                        List<PointLatLng> points = new List<PointLatLng>();
-                        points.Add(new PointLatLng(lastlat2, lastlng2));
-                        points.Add(new PointLatLng(nowlat2, nowlng2));
-                        GMapRoute r = new GMapRoute(points, "");
-                        r.Stroke = new Pen(Color.Red, 2);
-                        routesOverlay28.Routes.Add(r);
-                    }
-                    else if (lat > 30 && lng > 100)
-                    {
-                        nowlat2 = lat;
-                        nowlng2 = lng;
-                    }
-                }
-
-            }
-
-            else if (RobotId == 30)
-            {
-                if (status == 65)
-                {
-                    double wglat, wglng;
-
-
-                    double.TryParse(System.Text.Encoding.Default.GetString(latitude), out wglat);
-                    double.TryParse(System.Text.Encoding.Default.GetString(longitude), out wglng);
-                    //double.TryParse(System.Text.Encoding.Default.GetString(Azimuth), out azi);
-
-
-                    wglat = (wglat - (int)wglat / 100 * 100) / 60 + (int)wglat / 100;
-                    wglng = (wglng - (int)wglng / 100 * 100) / 60 + (int)wglng / 100;
-                    EvilTransform.transform(wglat, wglng, out lat, out lng);
-
-
-                    if (nowlat3 != 0 && lat > 30 && lng > 100)
-                    {
-                        lastlat3 = nowlat3;
-                        lastlng3 = nowlng3;
-                        nowlat3 = lat;
-                        nowlng3 = lng;
-
-                        List<PointLatLng> points = new List<PointLatLng>();
-                        points.Add(new PointLatLng(lastlat3, lastlng3));
-                        points.Add(new PointLatLng(nowlat3, nowlng3));
-                        GMapRoute r = new GMapRoute(points, "");
-
-                        r.Stroke = new Pen(Color.Red, 2);
-
-                        routesOverlay30.Routes.Add(r);
-                    }
-                    else if (lat > 30 && lng > 100)
-                    {
-                        nowlat3 = lat;
-                        nowlng3 = lng;
-                    }
-                }
-
-
-            }
-            else if (RobotId == 32)
-            {
-                if (status == 65)
-                {
-                    double wglat, wglng;
-
-
-                    double.TryParse(System.Text.Encoding.Default.GetString(latitude), out wglat);
-                    double.TryParse(System.Text.Encoding.Default.GetString(longitude), out wglng);
-                    //double.TryParse(System.Text.Encoding.Default.GetString(Azimuth), out azi);
-
-
-                    wglat = (wglat - (int)wglat / 100 * 100) / 60 + (int)wglat / 100;
-                    wglng = (wglng - (int)wglng / 100 * 100) / 60 + (int)wglng / 100;
-                    EvilTransform.transform(wglat, wglng, out lat, out lng);
-
-
-                    if (nowlat4 != 0 && lat > 30 && lng > 100)
-                    {
-                        lastlat4 = nowlat4;
-                        lastlng4 = nowlng4;
-                        nowlat4 = lat;
-                        nowlng4 = lng;
-
-                        List<PointLatLng> points = new List<PointLatLng>();
-                        points.Add(new PointLatLng(lastlat4, lastlng4));
-                        points.Add(new PointLatLng(nowlat4, nowlng4));
-                        GMapRoute r = new GMapRoute(points, "");
-
-                        r.Stroke = new Pen(Color.Red, 2);
-
-                        routesOverlay32.Routes.Add(r);
-                    }
-                    else if (lat > 30 && lng > 100)
-                    {
-                        nowlat4 = lat;
-                        nowlng4 = lng;
-                    }
-                }
-
-
-
-
-            }
-
-#endregion 
-    
-            markerOverlays.Markers.Clear();
-            markOnePoint(nowlat1, nowlng1, 27);
-            markOnePoint(nowlat2, nowlng2, 28);
-            markOnePoint(nowlat3, nowlng3, 30);
-            markOnePoint(nowlat4, nowlng4, 32);
-
-         
-
-
+           
         }
 
         private void btnOPenBarrier_Click(object sender, EventArgs e)
         {
-            //btnOPenBarrier.Enabled = false;
-            //btnCloseBarrier.Enabled = true;
-            string s = "AAD18027AAAF0901016455";     //发送指令获取GPS
-            //byte[] buffer = new byte[s.Length / 2];
-            //for (int i = 0; i < s.Length; i += 2)
-            //    buffer[i / 2] = (byte)Convert.ToByte(s.Substring(i, 2), 16);
-            ////转换列表为数组后发送  
-            //serialPort1.Write(buffer.ToArray(), 0, buffer.Length);
-            sendmessage(s);
-            for (int i = 0; i < 10000000; i++)
+            for (int i = 0; i < 50; i++)
             {
-                
+                sendmessage("AAD180"+i.ToString("D2")+"AAAF0901016455");
+                Thread.Sleep(50);
             }
-            sendmessage("AAD18030AAAF0901016455");
-            for (int i = 0; i < 10000000; i++)
-            {
-
-            }
-            sendmessage("AAD18028AAAF0901016455");
-            for (int i = 0; i < 10000000; i++)
-            {
-
-            }
-            sendmessage("AAD18032AAAF0901016455");
         }
         void sendmessage(string s)
         {
@@ -1024,26 +820,13 @@ namespace ANOGround
         }
         private void btnCloseBarrier_Click(object sender, EventArgs e)
         {
-            //btnOPenBarrier.Enabled = true;
-            //btnCloseBarrier.Enabled = false;
-            string s = "AAD18027AAAF0901006355";     //发送指令获取GPS
-            sendmessage(s);
-            for (int i = 0; i < 10000000; i++)
+            for (int i = 0; i < 50; i++)
             {
-
+                sendmessage("AAD180" + i.ToString("D2") + "AAAF0901006355");
+                Thread.Sleep(50);
             }
-            sendmessage("AAD18030AAAF0901006355");
-            for (int i = 0; i < 10000000; i++)
-            {
-
-            }
-            sendmessage("AAD18028AAAF0901006355");
-            for (int i = 0; i < 10000000; i++)
-            {
-
-            }
-            sendmessage("AAD18032AAAF0901006355");
         }
+
 
 
     }
