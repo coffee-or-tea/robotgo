@@ -290,26 +290,30 @@ namespace ANOGround
                                      if (I>0)
                                      {
                                          RobotId = data_buf[I - 1] / 16 * 10 +data_buf[I - 1] %16;
-
-
-
-
-                            
                                          //     机器人接收数据
-
                                          robot[RobotId].robotOverlay = GMapAllRoutes[RobotId];
                                           robot[RobotId].getpoint(latitude, longitude);
-
-
                                           markOnePoint(robot[RobotId].nowPoint.Lat, robot[RobotId].nowPoint.Lng, RobotId);
-
-
-
+                                          if (robot[RobotId].arrivedCheck == 0)
+                                          {
+                                              Bitmap bitmap1 = (Bitmap)imageList3.Images[RobotId];//bitmapi++
+                                              GMarkerGoogle marker = new GMarkerGoogle(robot[RobotId].nowPoint, bitmap1);
+                                              GMapAllMarkers[RobotId].Markers.Clear();
+                                              GMapAllMarkers[RobotId].Markers.Add(marker);
+                                          }
+                                          else if (robot[RobotId].arrivedCheck == 1)
+                                          {
+                                              Bitmap bitmap1 = (Bitmap)imageList2.Images[RobotId];//bitmapi++
+                                              GMarkerGoogle marker = new GMarkerGoogle(robot[RobotId].nowPoint, bitmap1);
+                                              GMapAllMarkers[RobotId].Markers.Clear();
+                                              GMapAllMarkers[RobotId].Markers.Add(marker);
+                                          }
                                      }
-
-
-
                                         break;
+                                    case 9:
+                                            RobotId=data_buf[I + 4];
+                                            robot[RobotId].arrivedCheck = data_buf[I + 5];
+                                            break;
                                     default:
                                         break;
                                 }
@@ -506,27 +510,32 @@ namespace ANOGround
         GMapOverlay routesOverlay28 = new GMapOverlay("");
         GMapOverlay routesOverlay30 = new GMapOverlay("");
         GMapOverlay routesOverlay32 = new GMapOverlay("");
-        List<GMapOverlay> GMapAllMarkers = new List<GMapOverlay>();
-        List<GMapOverlay> GMapAllRoutes = new List<GMapOverlay>();
-        List<robot> robot=new List<robot>();
-        robot robotex =new robot();
+        //List<GMapOverlay> GMapAllMarkers = new List<GMapOverlay>();
+        //List<GMapOverlay> GMapAllRoutes = new List<GMapOverlay>();
+        //List<robot> robot=new List<robot>();
+        static robot[] robot = new robot[50];
+        GMapOverlay[] GMapAllMarkers = new GMapOverlay[50];
+        GMapOverlay[] GMapAllRoutes = new GMapOverlay[50];
+        robot robotex = new robot();
+        robot robotexe = new robot();
         private void MainMAp_Load(object sender, EventArgs e)
         {
-            
+           
             this.MainMap.Position = new PointLatLng(39.9607345203, 116.3210688729);
             MainMap.ShowCenter = false; //不显示中心十字点 
             this.MainMap.Manager.Mode = AccessMode.ServerAndCache;
             this.MainMap.MapProvider = GMapProviders.AMapSatelite;
             for (int i = 0; i < 50; i++)
             {
-                robot.Add(robotex);
-                GMapAllMarkers.Add(markerOverlaysMM);
-                GMapAllRoutes.Add(markerOverlaysMM);
-                MainMap.Overlays.Add(GMapAllMarkers[i]);                 
-                MainMap.Overlays.Add( GMapAllRoutes[i]);
+                //robot robot[i]=new robot();
+                //robot[i]=robotex;
+                robot[i] = new robot();
+                GMapAllMarkers[i]=new GMapOverlay();
+                GMapAllRoutes[i] = new GMapOverlay();
+                MainMap.Overlays.Add(GMapAllMarkers[i]);
+                MainMap.Overlays.Add(GMapAllRoutes[i]);
                 
             }
-            
             MainMap.Overlays.Add(markerOverlaysDis);
             MainMap.Overlays.Add(markerOverlays);
             MainMap.Overlays.Add(markerOverlays1);
@@ -635,11 +644,11 @@ namespace ANOGround
                  GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.arrow);
                  //marker.ToolTipText = "12";
                  markerOverlays0.Markers.Add(marker);
-                 for (int i = 0; i < 50; i++)
+                 for (int i = 0; i < 35; i++)
                  {
                      byte s=(byte)(i / 10 *16+ i % 10);
-                     serialPort1.Write(function1.GPSToCode(point,s), 0, function1.GPSToCode(point, 27).Length);  //向机器人发送要走的位置
-                     Thread.Sleep(25);
+                     serialPort1.Write(function1.GPSToCode(point, s), 0, function1.GPSToCode(point, s).Length);  //向机器人发送要走的位置
+                     Thread.Sleep(50);
                  }
             }
 
@@ -648,7 +657,6 @@ namespace ANOGround
             {
                 
                 PointLatLng point = MainMap.FromLocalToLatLng(e.X, e.Y);
-                //markOnePoint(e.X, e.Y);
                 mouselat = point.Lat;
                 mouselng = point.Lng;
                
@@ -784,6 +792,7 @@ namespace ANOGround
             if (checkBoxGPS.Checked&&btn_com_open.Enabled==false)
             {
                     getGPS(timei);                                     //获取GPS指令
+                   
                     timei++;
                     if (timei>50)
                     {
@@ -797,8 +806,8 @@ namespace ANOGround
         {
             for (int i = 0; i < 50; i++)
             {
-                sendmessage("AAD180"+"i.ToString(D2)"+"AAAF0901016455");
-                Thread.Sleep(25);
+                sendmessage("AAD180"+i.ToString("D2")+"AAAF0901016455");
+                Thread.Sleep(50);
             }
         }
         void sendmessage(string s)
@@ -813,8 +822,8 @@ namespace ANOGround
         {
             for (int i = 0; i < 50; i++)
             {
-                sendmessage("AAD180" + "i.ToString(D2)" + "AAAF0901006355");
-                Thread.Sleep(25);
+                sendmessage("AAD180" + i.ToString("D2") + "AAAF0901006355");
+                Thread.Sleep(50);
             }
         }
 

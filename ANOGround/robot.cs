@@ -44,6 +44,12 @@ namespace ANOGround
             get;
             set;
         }
+
+        public int arrivedCheck
+        {
+            get;
+            set;
+        }
     
         public void getpoint(byte[] latitude, byte[] longitude)
         {

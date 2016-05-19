@@ -1777,7 +1777,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 25;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // imageList2
@@ -1805,6 +1805,21 @@
             this.imageList2.Images.SetKeyName(18, "18.ico");
             this.imageList2.Images.SetKeyName(19, "19.ico");
             this.imageList2.Images.SetKeyName(20, "20.ico");
+            this.imageList2.Images.SetKeyName(21, "21.ico");
+            this.imageList2.Images.SetKeyName(22, "22.ico");
+            this.imageList2.Images.SetKeyName(23, "23.ico");
+            this.imageList2.Images.SetKeyName(24, "24.ico");
+            this.imageList2.Images.SetKeyName(25, "25.ico");
+            this.imageList2.Images.SetKeyName(26, "26.ico");
+            this.imageList2.Images.SetKeyName(27, "27.ico");
+            this.imageList2.Images.SetKeyName(28, "28.ico");
+            this.imageList2.Images.SetKeyName(29, "29.ico");
+            this.imageList2.Images.SetKeyName(30, "30.ico");
+            this.imageList2.Images.SetKeyName(31, "31.ico");
+            this.imageList2.Images.SetKeyName(32, "32.ico");
+            this.imageList2.Images.SetKeyName(33, "33.ico");
+            this.imageList2.Images.SetKeyName(34, "34.ico");
+            this.imageList2.Images.SetKeyName(35, "35.ico");
             // 
             // imageList3
             // 
